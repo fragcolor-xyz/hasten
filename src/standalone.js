@@ -76,6 +76,18 @@ async function reloadCBL() {
   window.chainblocks.canvas.id = "canvas";
   window.chainblocks.canvas.style.width = window.chainblocks.canvasHolder.clientWidth + "px";
   window.chainblocks.canvas.style.height = window.chainblocks.canvasHolder.clientHeight + "px";
+
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const userDefinedWidth = urlParams.get('width')
+  const userDefinedHeight = urlParams.get('height')
+
+  if (userDefinedWidth!== null || userDefinedWidth!== null ){
+    window.chainblocks.canvas.style.width = userDefinedWidth + 'px';
+    window.chainblocks.canvas.style.height = userDefinedHeight + 'px';
+    console.log('resize canvas');
+  }
+
   window.addEventListener('resize', (e) => {
     if (window.chainblocks.canvas) {
       window.chainblocks.canvas.style.width = window.chainblocks.canvasHolder.clientWidth + "px";
@@ -221,7 +233,9 @@ async function reloadCBL() {
 
       return window.chainblocks.canvas;
     })(),
-    arguments: ["/entry.edn", "--fragment", "45XkDw38X9Wq5CmcCaCT8hg25VW1", "--gateway", "https://rinkeby.infura.io/v3/f1f1f88885f54de7955ce248e1d69046"]
+    arguments: ["/entry.edn", "--fragment", "3iSVZKMKUT1VjxDF11DPhRAGuQLd", "--metamask", "true"]
+    // In case Metamask doesn't connect succesfully, use the following:
+    // arguments: ["/entry.edn", "--fragment", "45XkDw38X9Wq5CmcCaCT8hg25VW1", "--gateway", "https://rinkeby.infura.io/v3/f1f1f88885f54de7955ce248e1d69046"]
   });
 }
 

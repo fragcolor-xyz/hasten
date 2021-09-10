@@ -19,17 +19,44 @@
       margin: auto;
       display: block;
       position: absolute;
-      top: 0;
-      bottom: 0;
+      top: 10%;
       left: 0;
       right: 0;
+    }
+
+    .canvas-div {
+      height: 50vh;
+      width: 50vw;
+    }
+
+    .canvas-description {
+      top: 65%;
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 60%;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
-  <div style="height: 768px; width: 1024px; background-color: #101010">
-    <div id="canvas-holder" style="height: 100%; background-color: #101010"></div>
+  <div class="canvas-div">
+    <div id="canvas-holder" style="height: 100%;"></div>
+  </div>
+  <div class="canvas-description">
+    <div id="nft-title"><span><b> nft-title placeholder</b> </span></div>
+    <div id="nft-id"><span>nft-id placeholder</span></div>
+    <div id="nft-creator"><span>nft-creator placeholder</span></div>
+    <div id="nft-description">
+      <p>nft-description placeholder, nft-description placeholder, nft-description placeholder.</p>
+    </div>
+    <div id="nft-random">
+      <p>nft-random placeholder,nft-random placeholder,nft-random placeholder,nft-random placeholder,nft-random
+        placeholder.</p>
+    </div>
   </div>
 
 </body>
